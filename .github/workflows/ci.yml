@@ -21,7 +21,7 @@ jobs:
           CI: true    
           
       - name: Uploand Coverage
-        uses: actions/uploand-artifacts@v1
+        uses: actions/uploand-artifact@v1
         with:
             name: code_coverage
             path: coverage  
@@ -31,7 +31,7 @@ jobs:
         run: npm run build
 
       - name: Uploand Build
-        uses: actions/uploand-artifacts@v1
+        uses: actions/uploand-artifact@v1
         with:
             name: build
             path: build 
