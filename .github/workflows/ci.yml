@@ -23,18 +23,18 @@ jobs:
       - run: npm test -- --coverage
         env:
           CI: true   
-
-      - uses: actions/setup-node@v1
-        with:
-            node-version: "12.x"
-      - run: npm ci
-        
+          
       - name: Uploand Coverage
         if: github.event_name == 'push'
         uses: actions/upload-artifact@v1
         with:
             name: code_coverage
-            path: coverage  
+            path: coverage           
+
+      - uses: actions/setup-node@v1
+        with:
+            node-version: "12.x"
+      - run: npm ci
 
       - name: Build Project
         if: github.event_name == 'push'
